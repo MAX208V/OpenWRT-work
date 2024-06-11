@@ -45,6 +45,9 @@ on:
       dry_run:
         description: 'Logs simulated changes, no deletions are performed'
         required: false
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
 
 jobs:
   del_runs:
@@ -69,10 +72,8 @@ jobs:
               || github.event.inputs.delete_run_by_conclusion_pattern
             }}
             
-      - name: Delete Old Releases
+      - name: Delete Releases
         uses: dev-drprasad/delete-older-releases@master
         with:
           keep_latest: 3
           delete_tags: true
-        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
