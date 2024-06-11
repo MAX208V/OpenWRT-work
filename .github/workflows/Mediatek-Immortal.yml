@@ -4,7 +4,7 @@ name: Mediatek-Immortal
 on:
   #自动编译：每天早上4点
   schedule:
-    - cron: 0 20 * * *
+    - cron: 0 4 * * *
   #手动编译
   workflow_dispatch:
 
@@ -22,9 +22,9 @@ jobs:
       #默认主题
       WRT_THEME: argon
       #默认主机名
-      WRT_NAME: OWRT
+      WRT_NAME: 2077S-x
       #默认WIFI名
-      WRT_WIFI: OWRT
+      WRT_WIFI: 2077S-x
       #默认密码，仅作提示，修改无用
       WRT_PW: 无
       #默认地址
