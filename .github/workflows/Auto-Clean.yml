@@ -69,9 +69,8 @@ jobs:
               || github.event.inputs.delete_run_by_conclusion_pattern
             }}
             
-      - name: Delete Releases
+      - name: Delete Old Releases
         uses: dev-drprasad/delete-older-releases@master
         with:
           keep_latest: 3
           delete_tags: true
-          dry_run: ${{ github.event.inputs.dry_run }}
